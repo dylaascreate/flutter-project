@@ -17,4 +17,5 @@ A Flutter project demonstrating basic navigation and form input/output handling.
 - Flutter SDK installed
 - Compatible IDE (VS Code, Android Studio, etc.)
 
-![Screenshot 2025-05-29 174526](https://github.com/user-attachments/assets/1360b884-6bf0-4907-9be5-f67f286f0b21)![Screenshot 2025-05-29 174630](https://github.com/user-attachments/assets/730cda98-bd80-4a72-95f8-86604d73eb0a)
+Screenshots
+<div align="center"> <img src="https://github.com/user-attachments/assets/1360b884-6bf0-4907-9be5-f67f286f0b21" alt="Screenshot 1" width="300"/> <img src="https://github.com/user-attachments/assets/730cda98-bd80-4a72-95f8-86604d73eb0a" alt="Screenshot 2" width="300"/> </div>
