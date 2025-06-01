@@ -1,16 +1,18 @@
 # flutter_navigation_lab
 
-A new Flutter project.
+A Flutter project demonstrating basic navigation and form input/output handling.
+
+## Features
+
+- **Navigation:**  
+  Navigate between different screens/pages using Flutter's Navigator.
+
+- **Form Input and Output:**  
+  Collect user input through forms and display or process the entered data.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Flutter SDK installed
+- Compatible IDE (VS Code, Android Studio, etc.)
