@@ -26,8 +26,10 @@ A Flutter project demonstrating usage and integration of 4 different plugins for
 
 ### Installation
 
+To clone and run the `flutter_plugin_lab` branch of this project, use the following commands:
+
 ```bash
-git clone https://github.com/yourusername/flutter_plugin_lab.git
-cd flutter_plugin_lab
+git clone -b flutter_plugin_lab https://github.com/dylaascreate/flutter-project.git
+cd flutter_project
 flutter pub get
 flutter run
