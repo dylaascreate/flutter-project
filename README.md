@@ -1,16 +1,33 @@
 # flutter_plugin_lab
 
-A new Flutter project.
+A Flutter project demonstrating usage and integration of 4 different plugins for common app functionalities such as image picking, local storage, URL launching, and file management.
+
+## Plugins Used
+
+- **image_picker** — Pick images from gallery or camera.
+- **path_provider** — Access device file system paths.
+- **shared_preferences** — Store simple key-value data persistently.
+- **url_launcher** — Open URLs in the device's default browser.
+
+## Features
+
+- Pick or take photos using device camera or gallery.
+- Save picked images locally in app documents directory.
+- Store and retrieve image paths and URLs persistently using shared preferences.
+- Launch URLs directly from the app.
+- Display saved image and URL on app startup.
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+### Prerequisites
 
-A few resources to get you started if this is your first Flutter project:
+- Flutter SDK installed (>= 3.0.0 recommended)
+- Compatible device or emulator
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+### Installation
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```bash
+git clone https://github.com/yourusername/flutter_plugin_lab.git
+cd flutter_plugin_lab
+flutter pub get
+flutter run
