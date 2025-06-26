@@ -1,14 +1,9 @@
-// Copyright 2013 The Flutter Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
-
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'example.dart';
 
 void main() => runApp(const MyApp());
 
-/// App for testing
 class MyApp extends StatelessWidget {
   /// Default Constructor
   const MyApp({super.key});
@@ -26,7 +21,7 @@ class MyApp extends StatelessWidget {
         fontFamily: 'Poppins',
         appBarTheme: const AppBarTheme(
           titleTextStyle: TextStyle(
-            color: Colors.white,   // <-- Set your desired color here
+            color: Colors.white, 
             fontSize: 20,
             fontWeight: FontWeight.bold,
           ),
