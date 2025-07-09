@@ -19,22 +19,24 @@ This app allows users to **add**, **view**, **edit**, and **delete** staff recor
 
 > Firebase interface
 
-1. Cloud Firestore
-![alt text](image-5.png)
+1. Cloud Firestore  
+<img src="image-5.png" width="300"/>
 
 > Flutter page
 
-1. Add staff form
-![alt text](image.png)![alt text](image-1.png)
+1. Add staff form  
+<img src="image.png" width="300"/>
+<img src="image-1.png" width="300"/>
 
-2. Staff list
-![alt text](image-2.png)
+2. Staff list  
+<img src="image-2.png" width="300"/>
 
-3. Edit staff
-![alt text](image-3.png)
+3. Edit staff  
+<img src="image-3.png" width="300"/>
 
-4. Delete staff
-![alt text](image-4.png)
+4. Delete staff  
+<img src="image-4.png" width="300"/>
+
 
 ---
 
