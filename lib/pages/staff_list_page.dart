@@ -20,21 +20,39 @@ class StaffListPage extends StatelessWidget {
         content: Column(
           mainAxisSize: MainAxisSize.min,
           children: [
-            TextField(controller: nameCtrl, decoration: InputDecoration(labelText: 'Name')),
-            TextField(controller: ageCtrl, decoration: InputDecoration(labelText: 'Age'), keyboardType: TextInputType.number),
+            TextField(
+              controller: nameCtrl,
+              decoration: InputDecoration(
+                labelText: 'Name',
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
+            const SizedBox(height: 12),
+            TextField(
+              controller: ageCtrl,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: 'Age',
+                border: OutlineInputBorder(borderRadius: BorderRadius.circular(12)),
+              ),
+            ),
           ],
         ),
         actions: [
           TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          ElevatedButton(
             onPressed: () {
               FirebaseFirestore.instance.collection('staff').doc(doc.id).update({
-                'name': nameCtrl.text,
+                'name': nameCtrl.text.trim(),
                 'age': int.tryParse(ageCtrl.text) ?? doc['age'],
               });
               Navigator.pop(context);
             },
-            child: Text('Update'),
-          )
+            child: const Text('Update'),
+          ),
         ],
       ),
     );
@@ -44,10 +62,12 @@ class StaffListPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Staff List'),
+        title: const Text('Staff List'),
+        backgroundColor: Colors.green,
+        foregroundColor: Colors.white,
         actions: [
           IconButton(
-            icon: Icon(Icons.add),
+            icon: const Icon(Icons.add),
             onPressed: () {
               Navigator.pushReplacement(
                 context,
@@ -58,36 +78,52 @@ class StaffListPage extends StatelessWidget {
         ],
       ),
       body: StreamBuilder<QuerySnapshot>(
-        stream: staffRef.snapshots(),
+        stream: staffRef.orderBy('name').snapshots(),
         builder: (context, snapshot) {
-          if (snapshot.hasError) return Center(child: Text('Error fetching data'));
-          if (snapshot.connectionState == ConnectionState.waiting) return Center(child: CircularProgressIndicator());
+          if (snapshot.hasError) {
+            return const Center(child: Text('Error fetching data'));
+          }
+          if (snapshot.connectionState == ConnectionState.waiting) {
+            return const Center(child: CircularProgressIndicator());
+          }
 
           final docs = snapshot.data!.docs;
 
+          if (docs.isEmpty) {
+            return const Center(child: Text('No staff found'));
+          }
+
           return ListView.builder(
+            padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             itemCount: docs.length,
             itemBuilder: (_, index) {
               final doc = docs[index];
               final staff = doc.data() as Map<String, dynamic>;
 
-              return AnimatedContainer(
-                duration: Duration(milliseconds: 300),
-                curve: Curves.easeInOut,
-                margin: EdgeInsets.symmetric(vertical: 8, horizontal: 12),
-                decoration: BoxDecoration(
-                  color: Colors.blue.shade50,
-                  borderRadius: BorderRadius.circular(15),
-                  boxShadow: [BoxShadow(color: Colors.grey.shade300, blurRadius: 5)],
-                ),
+              return Card(
+                elevation: 4,
+                shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(16)),
+                margin: const EdgeInsets.symmetric(vertical: 8),
                 child: ListTile(
-                  title: Text('${staff['name']} (ID: ${staff['id']})', style: TextStyle(fontWeight: FontWeight.bold)),
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 10),
+                  title: Text(
+                    '${staff['name']} (ID: ${staff['id']})',
+                    style: const TextStyle(fontWeight: FontWeight.bold),
+                  ),
                   subtitle: Text('Age: ${staff['age']}'),
                   trailing: Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
-                      IconButton(icon: Icon(Icons.edit, color: Colors.orange), onPressed: () => _showEditDialog(context, doc)),
-                      IconButton(icon: Icon(Icons.delete, color: Colors.red), onPressed: () => _deleteStaff(doc.id)),
+                      IconButton(
+                        icon: const Icon(Icons.edit, color: Colors.orange),
+                        onPressed: () => _showEditDialog(context, doc),
+                        tooltip: 'Edit',
+                      ),
+                      IconButton(
+                        icon: const Icon(Icons.delete, color: Colors.red),
+                        onPressed: () => _deleteStaff(doc.id),
+                        tooltip: 'Delete',
+                      ),
                     ],
                   ),
                 ),
