@@ -20,7 +20,7 @@ This app allows users to **add**, **view**, **edit**, and **delete** staff recor
 > Firebase interface
 
 1. Cloud Firestore  
-<img src="image-5.png" width="300"/>
+<img src="image-5.png" width="1000"/>
 
 > Flutter page
 
