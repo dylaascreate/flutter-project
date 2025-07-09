@@ -68,10 +68,10 @@ cd flutter-project
 
 ### 🗂️ Project Structure
 
-lib/
-├── pages/
-│   ├── staff_form_page.dart      # Staff registration form
-│   └── staff_list_page.dart      # Staff list with edit/delete options
-├── firebase_options.dart         # Generated Firebase config
-└── main.dart                     # App entry point and theme setup
+lib/<br>
+├── pages/<br>
+│   ├── staff_form_page.dart      # Staff registration form<br>
+│   └── staff_list_page.dart      # Staff list with edit/delete options<br>
+├── firebase_options.dart         # Generated Firebase config<br>
+└── main.dart                     # App entry point and theme setup<br>
 
