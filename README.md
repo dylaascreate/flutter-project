@@ -62,8 +62,8 @@ This app allows users to **add**, **view**, **edit**, and **delete** staff recor
 ### 2️⃣ Clone the Repository
 
 ```bash
-git clone https://github.com/yourusername/flutter_firebase_crud_lab.git
-cd flutter_firebase_crud_lab
+git clone --branch flutter_firebase_crud_lab https://github.com/dylaascreate/flutter-project.git
+cd flutter-project
 ```
 
 ### 🗂️ Project Structure
